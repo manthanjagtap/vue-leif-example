@@ -57,7 +57,7 @@ export default {
         Op.equalTo('sys.versionStatus', 'published')
       );
       query.pageIndex = 0;
-      query.pageSize = 9;
+      query.pageSize = 18;
 
       const entries = await ContensisClient.entries.search(query);
       console.log({ entries });
@@ -68,19 +68,19 @@ export default {
       console.error(error);
     }
 
-    // // Query for blog posts.
-    // const blogsQuery = new Query(
-    //   Op.equalTo('sys.contentTypeId', 'blogPost'),
-    //   Op.equalTo('sys.versionStatus', 'latest')
-    // );
+    // Query for blog posts.
+    const blogsQuery = new Query(
+      Op.equalTo('sys.contentTypeId', 'blogPost'),
+      Op.equalTo('sys.versionStatus', 'latest')
+    );
 
-    // console.log(blogsQuery);
-    // // Search using the query.
-    // const blogsPayload = await ContensisClient.entries.search(blogsQuery);
+    console.log(blogsQuery);
+    // Search using the query.
+    const blogsPayload = await ContensisClient.entries.search(blogsQuery);
 
-    // console.log(blogsPayload);
-    // // Pass search results to the blogListData prop.
-    // this.blogListData = blogsPayload.items;
+    console.log(blogsPayload);
+    // Pass search results to the blogListData prop.
+    this.blogListData = blogsPayload.items;
   },
 };
 </script>
