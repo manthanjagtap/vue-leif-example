@@ -46,7 +46,7 @@ export default {
   title: 'Page title',
   data() {
     return {
-      imageHost: `https://live-${process.env.VUE_APP_ALIAS}.cloud.contensis.com`,
+      imageHost: `https://live-${import.meta.env.VITE_APP_ALIAS}.cloud.contensis.com`,
       blog: null,
     };
   },

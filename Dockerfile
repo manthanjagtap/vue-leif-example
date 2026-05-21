@@ -1,5 +1,5 @@
 # Use an official Node.js runtime as a parent image
-FROM node:16-alpine as builder
+FROM node:20-alpine as builder
 
 # Set the working directory in the container
 WORKDIR /usr/src/app
@@ -18,4 +18,4 @@ COPY ./manifest.json /manifest.json
 EXPOSE 3001
 
 # Start the application
-CMD ["npm", "run", "serve"]
+CMD ["npx", "vite", "--host", "--port", "3001"]
