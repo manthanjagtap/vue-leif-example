@@ -1,8 +1,5 @@
 .DS_Store
 node_modules
-/dist
-/.agents
-skills-lock.json
 .gitignore
 
 
